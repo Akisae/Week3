@@ -54,19 +54,19 @@ if(temperatures[i] > 5)
 const lectureRoom1 = {
     name: "Room A227",
     numberOfStudents: 40,
-    hasProjectors: true,
+    hasProjector: true,
     floor: 2 
 }
 const lectureRoom2 = {
     name: "Room A228",
     numberOfStudents: 25,
-    hasProjectors: true,
+    hasProjector: true,
     floor: 2 
 }
 const lectureRoom3 = {
     name: "Room A229",
     numberOfStudents: 30,
-    hasProjectors: false,
+    hasProjector: false,
     floor: 2 
 }
 
@@ -80,6 +80,7 @@ function describeLectureroom(room){
     return "the lectureroom ${room.name} is located on floor ${room.floor}, has ${room.numberofStudents} students, and ${projectorText}."
 }
 //#endregion
+//#region Task 3
 /*
 3. Survey Result Interpreter
 
@@ -95,3 +96,5 @@ function describeLectureroom(room){
 */
 
 const surveyData = JSON.parse(document.querySelector("#surveyData").value);
+
+//#endregion
