@@ -17,10 +17,25 @@
     Store the counts in an object with meaningful property names.
     Write a function that returns a human-readable sentence summarizing the week (e.g. “There were 2 cold days, 3 mild days, and 2 warm days.”).
 */
-
+//#region Task 1
 const temperatures = JSON.parse(`[${document.querySelector("#temperatures").value}]`);
+let coldDays = 0;
+let mildDays = 0;
+let warmDays = 0;
 
-
+for (let i=0; i<temperatures.length; i++){
+if(temperatures[i] > 5)
+    {
+    coldDays++;
+}else if (temperatures[i] >= 5 && temperatures[i] <= 20)
+    {
+    mildDays++;
+}else
+    {
+    warmDays++;
+}
+}
+//#endregion
 /*
 2. Describe a lectureroom
 
@@ -34,11 +49,37 @@ const temperatures = JSON.parse(`[${document.querySelector("#temperatures").valu
     Create an array containing several lectureroom objects.
     Write a function that returns a sentence describing each lectureroom in natural language.
 */
+//region Task 2.
 
+const lectureRoom1 = {
+    name: "Room A227",
+    numberOfStudents: 40,
+    hasProjectors: true,
+    floor: 2 
+}
+const lectureRoom2 = {
+    name: "Room A228",
+    numberOfStudents: 25,
+    hasProjectors: true,
+    floor: 2 
+}
+const lectureRoom3 = {
+    name: "Room A229",
+    numberOfStudents: 30,
+    hasProjectors: false,
+    floor: 2 
+}
 
+const lectureRooms = [lectureRoom1,lectureRoom2,lectureRoom3];
 
+function describeLectureroom(room){
+    const projectorText = room.hasProjector
+    ? "has a projector"
+    : "does not have a projector"
 
-
+    return "the lectureroom ${room.name} is located on floor ${room.floor}, has ${room.numberofStudents} students, and ${projectorText}."
+}
+//#endregion
 /*
 3. Survey Result Interpreter
 
