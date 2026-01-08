@@ -35,6 +35,7 @@ if(temperatures[i] > 5)
     warmDays++;
 }
 }
+
 //#endregion
 /*
 2. Describe a lectureroom
@@ -72,13 +73,22 @@ const lectureRoom3 = {
 
 const lectureRooms = [lectureRoom1,lectureRoom2,lectureRoom3];
 
-function describeLectureroom(room){
+function describeLectureRoom(room){
     const projectorText = room.hasProjector
     ? "has a projector"
     : "does not have a projector"
 
-    return "the lectureroom ${room.name} is located on floor ${room.floor}, has ${room.numberofStudents} students, and ${projectorText}."
+      return "The lectureroom " + room.name +
+    " is located on floor " + room.floor +
+    ", fits " + room.numberOfStudents +
+    " students, and " + projectorText + ".";
 }
+
+
+for (const room of lectureRooms) {
+  console.log(describeLectureRoom(room));
+}
+
 //#endregion
 //#region Task 3
 /*
